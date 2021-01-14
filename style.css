@@ -1,22 +1,17 @@
-/*??? ????????*/
 body {
     background: url(folder_for_logo/logo_react.jpeg);
-    background-attachment: fixed;
-    background-repeat: repeat;
-    background-size: 10% 21%;
+    background-size: 10% 13%;
 }
 
-/*???????? ?????(header) ?????*/
 #header {
-    width: 500px;
+    top: 0;
+    width: 100%;
     height: 120px;
-    background-color: white;
     border-radius: 30px;
-    margin-left: 550px;
-    position: relative;
+    position: fixed;
+    z-index: 100;
+    background-color: yellowgreen;
     background-image: linear-gradient(white, blue, white);
-    
-    /*????? ???? ??????, ??????? ????????? ?? ????? ?????*/
     text-shadow: 0 1px 0 hsl(174, 5%, 80%),
     0 2px 0 hsl(174,5%,75%),
 	0 3px 0 rgb(144, 177, 177),
@@ -31,14 +26,29 @@ body {
 	0 5px 10px rgba(0,0,0,.2),
 	0 10px 10px rgba(0,0,0,.2),
     0 20px 20px rgba(0,0,0,.3);
+    
+}
+
+#rotate {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    animation: rotateLogo 1s infinite linear;
+}
+
+@keyframes rotateLogo {
+    from{
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .flashingText{
     animation: flashingText 1s infinite;
     text-align: center;
-    margin: 0;position: absolute;
-    top: 25%;
-    left: 25% ;
+    margin-top: -90px;
 }
 
 @keyframes flashingText {
@@ -50,18 +60,27 @@ body {
     }
 }
 
-/*???? ? ????????? ???????*/
 #projectDescription{
+    margin-top: 150px;
     width: 1200px;
     height: 300px;
-    margin-top: 5%;
     margin-left: 12%;
     border-radius: 30px;
     background-image: linear-gradient(skyblue, white, skyblue);
     position: relative;
 }
 
-/*????????...*/
+#projectDescription a {
+    text-decoration: none;
+    background: linear-gradient(100deg,orange, red, orange);
+    background-size: 300% 300%;
+    animation: efectGradient 3s ease infinite;
+}
+
+li {
+    list-style-type: none;
+}
+
 @keyframes efectGradient {
     0% {
         background-position: 0 50%;
@@ -74,55 +93,41 @@ body {
     }
 }
 
-/*???? "??????? ???????"*/
 #projectWorkArea{
     width: 1200px;
-    height: 300px;
-    margin-top: 5%;
+    height: 500px;
+    margin-top: 50px;
     margin-left: 12%;
     border-radius: 30px;
-    position: relative;
-    background-color: white;
-    background-image: linear-gradient(skyblue, white, skyblue);
+    background-image: url(folder_for_logo/matrix.jpg);
+    background-size: 80%;
 }
 
 #projectWorkArea h1 {
     text-align: center;
-}
-
-/*
-???-?? ???? ??????? (Footer) ?????. 
-P.S.
-???????? ????? ??? ?? ???????, ?????? ?????????? ?????? ??????? ? ????????, 
-??? ? ???????? ?????? ? ??? ??? ??? ????? footer ?????????
-*/
-#autor a{
-    border-radius: 30px;
-    background-color: white;
-    background-image: linear-gradient(black, white, black);
+    color: white;
 }
 
 #autor {
-    height: 80px; 
-    width: 300px; 
-    margin-top: 3%; 
-    margin-bottom: 3%; 
-    margin-left: 80%; 
-    background-image: linear-gradient(black, white, black);
-    text-align: center; 
-    line-height: 80px; 
+    width: 350px;
+    height: 50px;
     border-radius: 30px;
-}
-
-/*????? ?????? ?????? ????????????? ?? ??????*/
- a {
+    border-style: solid;
+    text-align: left;
+    background-image: linear-gradient(white, black, white);
+    padding: 10px;
+    color: skyblue;
+    margin: 5%;
+    margin-left: 35%;
     text-decoration: none;
-    background: linear-gradient(100deg,orange, red, orange);
-    background-size: 300% 300%;
-    animation: efectGradient 3s ease infinite;
 }
 
-/*??????? ??? ???????? github*/
-img {
-    border-radius: 30px;
+#autor a {
+    text-decoration: none;
+    color:skyblue;
+}
+
+#autor a:hover{
+    color:white;
+    animation: rotateLogo 1s linear;
 }
